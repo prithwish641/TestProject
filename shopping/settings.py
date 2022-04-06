@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['mywebshopping123.azurewebsites.net']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
+    'whitenoise.runserver_nostatic',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
