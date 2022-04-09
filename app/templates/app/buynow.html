@@ -7,16 +7,16 @@
   <div class="col-sm-6">
     <h4>Order Summary</h4>
     <hr>
-	{% for item in buy_items %}
+	
       <div class="card mb-2">
         <div class="card-body">
-          <h5>Product: {{item.product.title}}</h5>
-          <p>Quantity: {{item.quantity}}</p>
-          <p class="fw-bold">Price: {{item.total_cost}}</p>
+          <h5>Product: {{item_last.product.title}}</h5>
+          <p>Quantity: {{item_last.quantity}}</p>
+          <p class="fw-bold">Price: {{item_last.total_cost}}</p>
         </div>
       </div>
-	  {% endfor %}
-	  <p class="fw-bold">Total Cost + Rs. 90 = {{totalamount}}</p>
+	  
+	  <p class="fw-bold">Total Cost + Rs. 90 = {{price_amnt}}</p>
     <small>Term and Condition: Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, ullam saepe! Iure optio repellat dolor velit, minus rem. Facilis cumque neque numquam laboriosam, accusantium adipisci nisi nihil in et quis?</small>
   </div>
   <div class="col-sm-4 offset-sm-1">
