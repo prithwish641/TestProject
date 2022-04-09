@@ -149,16 +149,21 @@ def buy_now(request):
     user = request.user
     add = Customer.objects.filter(user=user)
     buy_items = Buy.objects.filter(user=user)
+    item_length = len(buy_items)
+    item_lst = item_length-1
+    item_last = buy_items[item_lst]
+    #print(buy_items)
     amount = 0.0
     shipping_amount=90.0
     buy_product = [p for p in Buy.objects.all() if p.user==request.user]
-    print(buy_product)
+    #print(buy_product)
     if buy_product:
         for p in buy_product:
             tempamount = p.product.discount_price
             amount += tempamount
         totalamount=amount+shipping_amount
-    return render(request, 'app/buynow.html', {'add':add, 'totalamount':totalamount, 'buy_items':buy_items})
+    price_amnt = item_last.product.discount_price+shipping_amount
+    return render(request, 'app/buynow.html', {'add':add, 'price_amnt':price_amnt, 'item_last':item_last})
 
 @login_required
 def profile(request):
