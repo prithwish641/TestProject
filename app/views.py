@@ -241,9 +241,6 @@ def anniversary(request, data=None):
     return render(request, 'app/anniversary.html', {'anniversary_products':anniversary_products})
 
 def customer_care(request):
-    if request.method == 'GET':
-        problem = request.GET['inputProblem']
-        print(problem)
     return render(request, 'app/chatbot.html')
     
     
